@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center text-light mb-4">Check the Weather 🌤</h2>
+<form method="POST" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="city" class="form-control" placeholder="Enter city name..." required>
+        <button class="btn btn-light">Search</button>
+    </div>
+</form>
+
+{% if error %}
+<div class="alert alert-danger text-center">{{ error }}</div>
+{% endif %}
+
+{% if weather %}
+<div class="card shadow-lg weather-card mx-auto">
+    <div class="card-body text-center text-light">
+        <h3>{{ weather.city }}, {{ weather.country }}</h3>
+        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+        <h1>{{ weather.temp }}°C</h1>
+        <p>{{ weather.description }}</p>
+        <hr class="bg-light">
+        <div class="row">
+            <div class="col">
+                <strong>Humidity:</strong> {{ weather.humidity }}%
+            </div>
+            <div class="col">
+                <strong>Wind:</strong> {{ weather.wind }} m/s
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+body {
+    background-color: #3e2c23;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.bg-brown {
+    background-color: #5c4033 !important;
+}
+
+.weather-card {
+    background-color: #4b3621;
+    border-radius: 15px;
+    max-width: 400px;
+}
+
+.weather-card img {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+input.form-control {
+    border-radius: 15px 0 0 15px;
+}
+
+button.btn {
+    border-radius: 0 15px 15px 0;
+}
